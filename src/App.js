@@ -1,7 +1,7 @@
-import Login from "./login";
-import Logout from "./logout";
+import CryptoAssets from "./CryptoAssets";
+
 import { useState } from "react";
-import "./App.css";
+import "./assets/App.css";
 
 function App() {
   const [login, setLogin] = useState(false);
@@ -9,12 +9,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>{login === false ? "Please login" : "welcome back"}</h1>
+        <h1>{login === false ? "Please login" : "Welcome Back"}</h1>
         <ul>
           {!login ? (
             <button onClick={() => setLogin(true)}>Login</button>
           ) : (
-            <button onClick={() => setLogin(false)}>Logout</button>
+            <section>
+              <button onClick={() => setLogin(false)}>Logout</button>
+              <CryptoAssets />
+            </section>
           )}
         </ul>
       </header>
